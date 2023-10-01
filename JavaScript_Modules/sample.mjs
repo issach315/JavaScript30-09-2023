@@ -33,3 +33,15 @@ let callingStd = (stdName) =>{
 }
 
 export default callingStd;
+
+
+import User from './classExportImport.mjs'
+
+let me = new User("issach","issachemani227@gmail.com");
+
+console.log(me._name);
+console.log(me._email);
+
+console.log('------*****************--------');
+
+console.log(me.greetings());
