@@ -73,5 +73,6 @@ function sum(x,y,z,a,b,c){
 const sumResult = [1,2,3,4,5,6,7];//You can also pass multiple arguments to a function using the spread operator.
 sum(...sumResult)
 
+//js spread
 
 
