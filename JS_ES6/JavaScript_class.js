@@ -106,8 +106,12 @@ class Car{
  Benefits of Strict Mode
 The use of strict mode:
 
-helps to write a cleaner code
+helps to write a cleaner code 
+
 changes previously accepted silent errors (bad syntax) into real errors and throws an error message
+
 makes it easier to write "secure" JavaScript
+
+
 
  */
