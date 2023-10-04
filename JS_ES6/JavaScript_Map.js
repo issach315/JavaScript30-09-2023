@@ -152,3 +152,4 @@ console.log("Map Size  = ",map3.size);
 
 
 
+// js map
