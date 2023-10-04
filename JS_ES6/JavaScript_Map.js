@@ -120,9 +120,6 @@ for (const key of map3.keys()) {
 }
 
 
-
-
-
 /*
 Iterate Over Map Values
 
@@ -150,5 +147,8 @@ console.log(iterable.next().value);
 // finding the map size
 
 console.log("Map Size  = ",map3.size);
+
+
+
 
 
