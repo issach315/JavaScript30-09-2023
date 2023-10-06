@@ -1,16 +1,42 @@
-/*
-In JavaScript, you can also pass a function as an argument to a function. This function that
- is passed as an argument inside of another function is called a callback function.
-*/
 
-function eating(item,atTime){
 
-    console.log(`special is ${item}`);
+// function greetings(name,callback){
 
-    atTime();
+//     console.log(`welcome .. :) ${name}`);
+
+//     callback();
+// }
+
+
+// function farewell(){
+//     console.log("GoodBye...!");
+// }
+
+// greetings('issach',farewell);
+
+
+
+function foodCooking(callback){
+
+    setTimeout(()=>{
+        callback("porata");
+       
+    },0);
+
+    console.log("food Prepared.. :) ");
+
+
 }
 
-function atTime(){
-    console.log('nice dinner .. .. .. .. .. .. .. :)');
+
+// let item1 ='porata'
+function readyForEating(item1){
+  
+    for (let index = 0; index < 10; index++) {
+        // const element = array[index];
+        console.log("index",index);
+    }
+    console.log("im eating "+item1);
 }
-eating('biriyani',atTime);
+
+foodCooking(readyForEating);
