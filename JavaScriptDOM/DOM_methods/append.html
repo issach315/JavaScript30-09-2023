@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- append() method to insert a set of Node objects or DOMString objects after the last child of a parent node. -->
+    
+    
+    <ul id="list">
+        <li>JavaScript</li>
+    </ul>
+
+
+    <script>
+
+        let list =document.querySelector("#list");
+
+
+        let langs =["java","HTML","Python"];
+
+        const items =langs.map(lang => {
+
+            const li =document.createElement("li");
+
+            li.textContent=lang;
+
+            return li;
+
+        });
+
+        list.append(...items); // it add elements after node
+        list.prepend(...items);// it add elements before node
+    </script>
+</body>
+</html>

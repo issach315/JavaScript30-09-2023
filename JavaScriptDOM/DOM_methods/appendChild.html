@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        The appendChild() is a method of the Node interface. The appendChild()
+        method allows you to add a node to the end of the list of child nodes of a specified parent node.
+        
+        parentNode.appendChild(childNode);
+        
+     -->
+
+     <ul id="menu">
+
+     </ul>
+    
+
+    <script>
+
+
+        function createMenuItem(name) {
+            let li = document.createElement('li');
+            li.textContent = name;
+            return li;
+        }
+
+
+        // get the ul#menu
+        const menu = document.querySelector('#menu');
+        // add menu item
+        menu.appendChild(createMenuItem('Home'));
+        menu.appendChild(createMenuItem('Services'));
+        menu.appendChild(createMenuItem('About Us'));
+        menu.appendChild(createMenuItem('Contact us'));
+
+
+
+        console.log(menu.textContent);
+        console.log(menu.innerText);
+
+
+
+    </script>
+</body>
+</html>

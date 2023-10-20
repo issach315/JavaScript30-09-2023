@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript DOM - before()</title>
+    </head>
+
+    <body>
+
+        <p>This is JavaScript DOM before() method demo.</p>
+
+        <button>Donate Here</button>
+
+        <script>
+
+
+            const para = document.querySelector('p');
+
+           
+            const heading = document.createElement("h1");
+
+
+            heading.innerText = 'JavaScript DOM - before()';
+
+            // insert the h1 before the paragraph
+            para.before(heading);
+
+
+            const button = document.querySelector("button");
+            button.firstChild.before("❤️");
+
+        </script>
+    </body>
+
+</html>

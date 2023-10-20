@@ -15,3 +15,26 @@ const calcAmt =function(object) {
 
 let newArr = employees.map(calcAmt);
 console.log(newArr);
+
+
+/*
+
+Returns a new array with elements as the return values from the callback function for each element.
+Notes:
+
+map() does not change the original array.
+map() executes callback once for each array element in order.
+map() does not execute callback for array elements without values.
+*/
+console.log('________________________________________');
+
+let numbers = [2,3,4,5,6,7,8];
+
+function square(number){
+
+    return number * number ;
+}
+
+let square_numbers = numbers.map(square);
+
+console.log(square_numbers);

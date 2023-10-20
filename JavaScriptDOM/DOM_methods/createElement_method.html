@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <!-- 
+        document.createElement() to create a new HTML element and attach it to the DOM tree.
+
+        let element = document.createElement(htmlTag);
+
+        To attach the div to the document, you use the appendChild() method:z
+    
+    -->
+
+    <script>
+        let element = document.createElement("div");
+        element.className="divBlock";
+        element.innerHTML= "<h1>Hello this is a  h1 element </h1>";
+
+        document.body.appendChild(element);
+
+
+        console.log(element)
+    </script>
+</body>
+</html>
