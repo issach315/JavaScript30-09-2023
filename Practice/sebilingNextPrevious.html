@@ -1,0 +1,47 @@
+html
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="addElements()">Add Elements</button>
+<button onclick="deleteAllElements()">Delete All Elements</button>
+
+<div id="div1">
+</div>
+
+<script>
+function addElements() {
+  var divElement = document.getElementById("div1");
+
+  var para = document.createElement("p");
+  var node = document.createTextNode("This is a new paragraph.");
+  para.appendChild(node);
+
+  var deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "Delete";
+  deleteButton.onclick = function() {
+    divElement.removeChild(this.parentNode);
+  };
+
+  var addButton = document.createElement("button");
+  addButton.innerHTML = "Add";
+  addButton.onclick = function() {
+    var newPara = document.createElement("p");
+    var text = document.createTextNode("This is another new paragraph.");
+    newPara.appendChild(text);
+    divElement.appendChild(newPara);
+  };
+
+  para.appendChild(deleteButton);
+  para.appendChild(addButton);
+  divElement.appendChild(para);
+}
+
+function deleteAllElements() {
+  var divElement = document.getElementById("div1");
+  divElement.innerHTML = "";
+}
+</script>
+
+</body>
+</html>

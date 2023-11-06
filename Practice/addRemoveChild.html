@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add and Remove Elements</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .button-container {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-left: 5px;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- creating p elements inside  -->
+    </div>
+
+
+    <div class="button-container">
+        <button onclick="addElement()">Add Element</button>
+        <button onclick="removeElement()">Remove Element</button>
+    </div>
+
+    <script>
+        var container = document.getElementById('container');
+        var newElement;
+        var newElementButton;
+        let count = 1;
+        let array = [];
+        function addElement() {
+
+            newElement = document.createElement('p');
+            newElementButton = document.createElement('button');
+            newElement.textContent = 'hello hai where are you';
+            newElementButton.textContent = 'delete';
+            newElementButton.setAttribute('id', "deletebutton");
+            newElement.style.backgroundColor = "gray";
+            container.appendChild(newElement);
+            container.append(newElementButton)
+            newElementButton.setAttribute("onclick", `deleteData(${count})`);
+
+            array.push(count++);
+        }
+
+        const deleteData = (id) => {
+            container.remove();
+            const index = array.findIndex(item => item == id);
+            array.splice(index, 1);
+            array.forEach(item =>{
+                addElement();
+            })
+        };
+
+
+        function removeElement() {
+            var lastElement = container.lastElementChild;
+            if (lastElement) {
+                container.removeChild(lastElement);
+            }
+        }
+    </script>
+</body>
+
+</html>

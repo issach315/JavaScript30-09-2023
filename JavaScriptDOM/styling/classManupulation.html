@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="content"></div>
+
+
+    <script>
+        //add method 
+
+        let result =document.querySelector("#content");
+        result.classList.add("hello","hai");
+
+       for (const iterator of result.classList) {
+        
+         console.log(iterator);
+       }
+
+
+       // remove()
+
+       result.classList.remove("hai")
+
+       for (const iterator of result.classList) {
+        
+        console.log(iterator);
+      }
+
+      //repalce()
+
+
+      result.classList.replace("hello","wish")
+      
+      
+       for (const iterator of result.classList) {
+        
+        console.log(iterator);
+      }
+
+
+      //contains()
+      console.log(result.classList.contains("hello"))
+
+      //toggle()
+
+      result.classList.toggle("greet");
+
+        
+      for (const iterator of result.classList) {
+        
+        console.log(iterator);
+      }
+
+
+    </script>
+</body>
+</html>

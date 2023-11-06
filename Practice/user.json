@@ -1,0 +1,12 @@
+{
+    "user_data": [
+       {"name":"issach","age":24,"genser":"Male"},
+       {"name":"Siva","age":24,"genser":"Male"},
+       {"name":"sunil","age":24,"genser":"Male"},
+       {"name":"phani","age":27,"genser":"Male"},
+       {"name":"nagaraju","age":27,"genser":"Male"},
+       {"name":"guru","age":25,"genser":"Male"},
+       {"name":"harsha","age":24,"genser":"Male"}
+       
+    ]
+}
