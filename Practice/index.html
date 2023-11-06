@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+
+  <button onclick="addElements(10)">Add Elements</button>
+  <button onclick="deleteElements()">delete Elements</button>
+
+
+  <script>
+    function addElements(times) {
+
+
+      var divElement = document.getElementById("div1");
+
+      for (let index = 0; index < times; index++) {
+        var para = document.createElement("p");
+        var button = document.createElement("button");
+        var text = document.createTextNode(`This is paragraph number ${index + 1}`);
+        var buttonTxt = document.createTextNode(`Button`);
+        para.appendChild(text);
+        para.appendChild(button);
+        para.style.backgroundColor = "gray";
+        para.style.border = "1px solid red";
+        divElement.appendChild(para);
+      }
+    }
+
+    function deleteParticular (){
+      debugger
+    }
+
+    function deleteElements(times) {
+      var divElement = document.getElementById("div1");
+      divElement.removeChild(divElement.lastElementChild);
+    }
+
+  </script>
+
+  <div id="div1">
+  </div>
+</body>
+
+</html>

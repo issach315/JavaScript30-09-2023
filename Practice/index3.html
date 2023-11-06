@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="div1">
+  </div>
+  <div id="div2">
+    <button onclick="addElements()">Add Elements</button>
+    <button onclick="deleteAllElements()">Delete All Elements</button>
+
+  </div>
+
+  <script>
+    var divElement = '';
+    function addElements() {
+      var elementCount = 5;
+
+      divElement = document.getElementById("div1");
+
+      for (var i = 0; i < elementCount; i++) {
+        var para = document.createElement("p");
+        var paraElement = document.createTextNode("hello hai where are you " + (i + 1));
+        para.appendChild(paraElement);
+
+        var deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = function () {
+          divElement.removeChild(this.parentNode);
+        };
+
+        para.append(deleteButton);
+        divElement.appendChild(para);
+      }
+    }
+
+    function deleteAllElements(){
+      divElement = document.getElementById("div1");
+      divElement.innerHTML ='';
+    }
+  </script>
+
+</body>
+
+</html>

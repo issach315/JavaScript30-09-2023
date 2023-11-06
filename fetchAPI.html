@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const base_url = "https://fakestoreapi.com"
+
+        async function getMethod() {
+            const response = await fetch(`${base_url}/users`)
+                .then(res => res.json())
+                .then(result => console.log(result))
+
+        }
+
+        getMethod();
+
+        async function getparamsMethod() {
+            const response = await fetch(`${base_url}/users/3`)
+                .then(res => res.json())
+                .then(result => console.log(result));
+        }
+
+        getparamsMethod();
+
+        async function postData() {
+            const res = await fetch(`${base_url}/users`, {
+                method: "POST",
+                body: JSON.stringify(
+
+                    {
+                        "address": { "geolocation": { "lat": "40.3467", "long": "-30.1310" }, "city": "Cullman", "street": "Frances Ct", "number": 86, "zipcode": "29567-1452" }, "id": 3, "email": "kevin@gmail.com", "username": "Issach", "password": "Issach@0315", "name": { "firstname": "kevin", "lastname": "ryan" }, "phone": "1-567-094-1345", "__v": 0
+                    }),
+                headers: {
+                    "content-Type": "application/json"
+                }
+            }
+
+            )
+            let data =await res.json();
+            console.log(data);
+
+
+
+        }
+
+
+
+        postData();
+       
+
+        async function putData() {
+            const res = await fetch(`${base_url}/users/2`, {
+                method: "PUT",
+                body: JSON.stringify(
+
+                    {
+                        "address": { "geolocation": { "lat": "40.3467", "long": "-30.1310" }, "city": "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP", "street": "Frances Ct", "number": 86, "zipcode": "29567-1452" }, "id": 3, "email": "kevin@gmail.com", "username": "Issach", "password": "Issach@0315", "name": { "firstname": "kevin", "lastname": "ryan" }, "phone": "1-567-094-1345", "__v": 0
+                    }),
+                headers: {
+                    "content-Type": "application/json"
+                }
+            }
+
+            )
+            let data =await res.json();
+            console.log(data);
+
+
+
+        }
+        putData();
+
+       function deleteData(){
+        let res =  fetch(`${base_url}/users/1`,{
+            method:"DELETE"
+        })
+
+        let data =res.json();
+        console.log(data);
+
+       }
+       deleteData();
+      
+
+
+
+
+    </script>
+</body>
+
+</html>

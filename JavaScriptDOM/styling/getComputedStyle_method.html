@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .msg{
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid black;
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            color: red;
+            background-color: gray;
+            text-decoration: dotted;
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <p class="msg">Hello issach Emani welcome ...!</p>
+
+    <script>
+        let element =document.querySelector(".msg");
+                 let style  =getComputedStyle(element); 
+
+
+                 console.log(style.padding);
+                 console.log(style.margin);
+                 console.log(style.color);
+                 console.log(style.backgroundColor);
+                 console.log(style.fontSize);
+
+    </script>
+    
+</body>
+</html>

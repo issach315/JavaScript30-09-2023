@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 600px;
+            background-color: antiquewhite;
+        }
+
+        .form-control {
+
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Create User</h2>
+        </div>
+        <form class="form" onsubmit="submitHandular()">
+
+            <div class="form-control">
+                <label for="userName">User Name </label>
+                <input type="text" id="userName">
+                <small></small>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="abc@gmail.com">
+                <small></small>
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password </label>
+                <input type="password" id="password">
+                <small></small>
+            </div>
+
+           
+
+            <div class="form-control">
+                <label for="">Select-Location</label>
+                <select id="selection"onchange="removeOrSetError(this.value,'selection','select-error','Select option')">
+                    <option value=""></option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangulore">Bangulore</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+                <small id="select-error"></small>
+            </div>
+
+            <div class="form-control">
+                <input type="radio" name="gender" value="Male" id="genMale"
+                    onchange="removeOrSetError('genMale','radioError')">
+                <label>Male</label>
+
+                <input type="radio" name="gender" value="Female" id="feMale"
+                    onchange="removeOrSetError('feMale','radioError')">
+                <label>Female</label>
+
+                <small id="radioError"></small>
+
+            </div>
+
+
+
+
+            <div class="form-control">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    <script>
+      
+
+        let rate_value = 0;
+        if (document.getElementById('genMale').checked) {
+            rate_value = document.getElementById('genMale').value;
+        }
+
+        if (document.getElementById('feMale').checked) {
+            rate_value = document.getElementById('feMale').value;
+        }
+
+        if (!rate_value) {
+            document.getElementById("radioError").innerHTML = "Please select gender";
+            document.getElementById("radioError").style.color = "red";
+        }
+
+        function removeOrSetError(value, valueId, errorId, errorMessage) {
+            if (value != "") {
+                document.getElementById(errorId).innerHTML = "";
+                // document.getElementById(errorId).style.color = "red";
+            } else {
+                document.getElementById(errorId).innerHTML = errorMessage;
+                document.getElementById(errorId).style.color = "red";
+            }
+
+        }
+
+        let userName = document.getElementById("userName");
+
+        let email = document.getElementById("email");
+
+        let password = document.getElementById("password");
+
+        let cPassword = document.getElementById("confirmPassword");
+
+        let form = document.getElementById("form");
+
+        let selection = document.getElementById("selection")
+        let result = document.getElementById("result");
+
+        let gender = document.getElementsByName("gender");
+
+        function validationInput() {
+
+            //check user name  is empty
+
+            if (userName.value === "" || userName == null) {
+
+                onError(userName, "User Name can not be empty");
+
+            }
+            else {
+                onSuccess(userName)
+            }
+
+
+            //check email is empty
+            if (email.value === "" || email.value == null) {
+                onError(email, "Enter Email address");
+            }
+            else {
+                onSuccess(email);
+            }
+
+            //checking password 
+
+            if (password.value === "" || password.value == null) {
+
+                onError(password, "Password can not be empty");
+            }
+            else if (password.lenght <= 8 || password.lenght >= 15) {
+
+                onError(password, "password must be > 8 char and  < 15 chars");
+            }
+            else {
+                onSuccess(password);
+            }
+
+            //checking confirm passsword 
+
+            if (cPassword != "" || cPassword == null) {
+
+                onError(confirmPassword, "password must be same in both password fields")
+            }
+            else {
+                onSuccess(cPassword);
+            }
+
+            const selectValue = selection.value;
+
+            if (selectValue == "" || selectValue == null) {
+                document.getElementById("select-error").innerHTML = "Select option";
+                document.getElementById("select-error").style.color = "red";
+            }
+            else {
+                onSuccess(selection);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     
+            let rate_value = '';
+
+            if (document.getElementById('genMale').checked) {
+                const male = document.getElementById('genMale')
+                rate_value = male.value;
+            }
+
+            if (document.getElementById('feMale').checked) {
+                rate_value = document.getElementById('feMale').value;
+            }
+
+            debugger
+            if (!rate_value) {
+                document.getElementById("radioError").innerHTML = "Please select gender";
+                document.getElementById("radioError").style.color = "red";
+            }
+
+            // false value => '',"",0,false,undefind,null, [].lemght == 0, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // //selection options
+
+            // // result.innerText = selection.options[selection.selectedIndex].text;
+
+            // //gender radio button validation
+
+            // if (gender.value.length <= 0) {
+            //     onError(gender, "select gender")
+            // }
+
+
+        }
+
+
+
+        addEventListener("submit", (event) => {
+            event.preventDefault();
+            validationInput();
+
+        })
+
+
+
+        function onSuccess(inputEl) {
+
+            let parent = inputEl.parentElement;
+            let msg = parent.querySelector("small");
+            msg.innerText = "";
+
+
+
+        }
+
+        function onError(inputEl, message) {
+            let parent = inputEl.parentElement;
+            let msg = parent.querySelector("small");
+            msg.style.color = "red";
+            msg.innerText = message;
+        }
+    </script>
+</body>
+
+</html>
